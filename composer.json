@@ -1,0 +1,28 @@
+{
+    "name": "roanokecollege/ethos",
+    "description": "Roanoke College custom package for Ethos interactions",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "RoanokeCollege\\Ethos\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Scotty Smith",
+            "email": "chssmith@roanoke.edu"
+        }
+    ],
+    "require": {},
+    "extra": {
+	"laravel": {
+	    "providers": [
+		"RoanokeCollege\\Ethos\\ServiceProvider"
+	    ],
+	    "aliases": [
+		"Ethos": "RoanokeCollege\\Ethos\\Facade"
+	    ]
+	}
+    }
+}
