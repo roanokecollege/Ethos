@@ -1,5 +1,5 @@
 {
-    "name": "roanokecollege/ethos",
+    "name": "roanoke_college/ethos",
     "description": "Roanoke College custom package for Ethos interactions",
     "type": "library",
     "license": "MIT",
@@ -14,15 +14,17 @@
             "email": "chssmith@roanoke.edu"
         }
     ],
-    "require": {},
+    "require": {
+      "guzzlehttp/guzzle"
+    },
     "extra": {
-	"laravel": {
-	    "providers": [
-		"RoanokeCollege\\Ethos\\ServiceProvider"
-	    ],
-	    "aliases": [
-		"Ethos": "RoanokeCollege\\Ethos\\Facade"
-	    ]
-	}
+    	"laravel": {
+    	    "providers": [
+    		      "RoanokeCollege\\Ethos\\EthosServiceProvider"
+    	    ],
+    	    "aliases": [
+    		      "Ethos": "RoanokeCollege\\Ethos\\Facade"
+    	    ]
+    	}
     }
 }
