@@ -20,7 +20,7 @@
     		      "Roanokecollege\\Ethos\\EthosServiceProvider"
     	    ],
     	    "aliases": {
-            "Ethos": "Roanokecollege\\Ethos\\Facade"
+            "Ethos": "Roanokecollege\\Ethos\\EthosFacade"
     	    }
     	}
     },

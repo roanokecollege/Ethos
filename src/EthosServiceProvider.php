@@ -17,6 +17,10 @@ class EthosServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
           __DIR__ . "/../config/ethos.php", "ethos"
         );
+
+        $this->bind('Ethos', function () {
+          return new EthosFacade;
+        });
     }
 
     /**
