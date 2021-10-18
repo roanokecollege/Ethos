@@ -18,7 +18,7 @@ class EthosServiceProvider extends ServiceProvider
           __DIR__ . "/../config/ethos.php", "ethos"
         );
 
-        $this->bind('Ethos', function () {
+        \App::bind('Ethos', function () {
           return new EthosFacade;
         });
     }
