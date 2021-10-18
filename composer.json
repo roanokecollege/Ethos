@@ -14,17 +14,17 @@
             "email": "chssmith@roanoke.edu"
         }
     ],
-    "require": {
-      "guzzlehttp/guzzle": "*"
-    },
     "extra": {
     	"laravel": {
     	    "providers": [
     		      "Roanokecollege\\Ethos\\EthosServiceProvider"
     	    ],
-    	    "aliases": [
-    		      "Ethos": "Roanokecollege\\Ethos\\Facade"
-    	    ]
+    	    "aliases": {
+            "Ethos": "Roanokecollege\\Ethos\\Facade"
+    	    }
     	}
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^7.4"
     }
 }
