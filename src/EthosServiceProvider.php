@@ -19,7 +19,7 @@ class EthosServiceProvider extends ServiceProvider
         );
 
         \App::bind('Ethos', function () {
-          return new EthosFacade;
+          return new EthosRequest;
         });
     }
 
