@@ -1,11 +1,11 @@
 {
-    "name": "roanoke_college/ethos",
+    "name": "roanokecollege/ethos",
     "description": "Roanoke College custom package for Ethos interactions",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "RoanokeCollege\\Ethos\\": "src/"
+            "Roanokecollege\\Ethos\\": "src/"
         }
     },
     "authors": [
@@ -20,10 +20,10 @@
     "extra": {
     	"laravel": {
     	    "providers": [
-    		      "RoanokeCollege\\Ethos\\EthosServiceProvider"
+    		      "Roanokecollege\\Ethos\\EthosServiceProvider"
     	    ],
     	    "aliases": [
-    		      "Ethos": "RoanokeCollege\\Ethos\\Facade"
+    		      "Ethos": "Roanokecollege\\Ethos\\Facade"
     	    ]
     	}
     }

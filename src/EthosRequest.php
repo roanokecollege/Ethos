@@ -1,6 +1,6 @@
 <?php
 
-namespace RoanokeCollege\Ethos;
+namespace Roanokecollege\Ethos;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Collection;
