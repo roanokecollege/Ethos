@@ -89,4 +89,22 @@ class EthosRequest {
           ->put($this->generateUrl("person-holds", $person_hold["id"]))
           ->throw();
   }
+
+  /**
+   * Get the GUID for a specified PERC.
+   *
+   * @param string $perc The string pneumonic for a specified hold.
+   * @return string The GUID to use for the provided PERC
+   * @throws Exception Unable to find PERC
+   **/
+  public function getPercGuidByCode (string $perc): string {
+      $response = Http::withToken($this->auth_token)
+                      ->withHeaders([
+                        "accept" => config("ethos.api_header"),
+                        "Content-Type" => config("ethos.api_header")
+                      ])->get($this->generateUrl("person-hold-types"))
+                      ->throw();
+      $response = collect($response->object())->where("code", $perc)->first()->id;
+      return $response;
+  }
 }
