@@ -107,4 +107,19 @@ class EthosRequest {
       $response = collect($response->object())->where("code", $perc)->first()->id;
       return $response;
   }
+
+  /**
+   * End a PERC.
+   *
+   * @param string $rcid The RCID of the person record we are checking the PERCs for.
+   * @param string $guid The GUID of the person-hold-type entry of the PERC we are checking for.
+   * @param string $comment _Optional_ A comment to set on the perc, if provided.
+   * @throws Exception If a PERC entry cannot be found for the specified ID.
+   **/
+  public function endPersonHoldByRCIDAndPercGuid (string $rcid, string $guid, string $comment = "") {
+    $response = $this->getPersonHoldByRCIDAndPercGUID($rcid, $guid);
+    $response["endOn"] = \Carbon\Carbon::now();
+    if (!empty($comment)) $response["comment"] = $comment;
+    $this->updatePersonHoldByEntry($response);
+  }
 }
