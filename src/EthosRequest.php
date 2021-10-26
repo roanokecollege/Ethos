@@ -118,7 +118,7 @@ class EthosRequest {
    **/
   public function endPersonHoldByRCIDAndPercGuid (string $rcid, string $guid, string $comment = "") {
     $response = $this->getPersonHoldByRCIDAndPercGUID($rcid, $guid);
-    $response["endOn"] = \Carbon\Carbon::now();
+    $response["endOn"] = \Carbon\Carbon::now()->toJson();
     if (!empty($comment)) $response["comment"] = $comment;
     $this->updatePersonHoldByEntry($response);
   }
@@ -133,7 +133,7 @@ class EthosRequest {
    **/
   public function endPersonHoldByRCIDAndPercCode (string $rcid, string $perc, string $comment = "") {
     $guid = $this->getPercGuidByCode($perc);
-    $this->endPersonHoldByRCIDAndPercGuid($rcid, $perc, $comment);
+    $this->endPersonHoldByRCIDAndPercGuid($rcid, $guid, $comment);
   }
 
 }
