@@ -122,4 +122,18 @@ class EthosRequest {
     if (!empty($comment)) $response["comment"] = $comment;
     $this->updatePersonHoldByEntry($response);
   }
+
+  /**
+   * End a PERC by code.
+   *
+   * @param string $rcid The RCID of the person record we are checking the PERCs for.
+   * @param string $perc The string pneumonic for a specified hold.
+   * @param string $comment _Optional_ A comment to set on the perc, if provided.
+   * @throws Exception If a PERC entry cannot be found for the specified ID.
+   **/
+  public function endPersonHoldByRCIDAndPercCode (string $rcid, string $perc, string $comment = "") {
+    $guid = $this->getPercGuidByCode($perc);
+    $this->endPersonHoldByRCIDAndPercGuid($rcid, $perc, $comment);
+  }
+
 }
